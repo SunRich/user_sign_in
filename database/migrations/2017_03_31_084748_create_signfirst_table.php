@@ -13,7 +13,7 @@ class CreateSignfirstTable extends Migration
      */
     public function up()
     {
-        Schema::create('sign_first', function (Blueprint $table) {
+        Schema::create('signin_first', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->integer('user_id')->comment('the user id');
             $table->dateTime('first_time')->comment('first sign time');
@@ -29,6 +29,6 @@ class CreateSignfirstTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sign_first');
+        Schema::dropIfExists('signin_first');
     }
 }

@@ -13,11 +13,11 @@ class CreateSigninfoTable extends Migration
      */
     public function up()
     {
-        Schema::create('sign_info', function (Blueprint $table) {
+        Schema::create('signin_info', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->comment('the user id');
-            $table->timestampTz('signin_time')->comment('user sign time');
+            $table->timestampTz('first_time')->comment('user sign time');
             $table->index('user_id');
         });
     }
@@ -29,6 +29,6 @@ class CreateSigninfoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('sign_info');
+        Schema::dropIfExists('signin_info');
     }
 }
