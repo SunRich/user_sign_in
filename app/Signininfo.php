@@ -8,10 +8,12 @@
 namespace App;
 
 
-use Illuminate\Support\Facades\DB;
 
-class Signininfo
+use Illuminate\Database\Eloquent\Model;
+
+class Signininfo extends Model
 {
+    protected $table='signin_info';
 
     /**
      * 获取上一次的签到数据
@@ -20,7 +22,17 @@ class Signininfo
      */
     public function getLastTimeByUserId($userId)
     {
-        return strtotime(DB::where('user_id', $userId)->orderBy('id', 'desc')->value('signin_time'));
+        return $this::where('user_id', $userId)->orderBy('id', 'desc')->value('time');
     }
+
+
+    public function addOneSignin($userId,$time)
+    {
+        return $this::insert([
+            'user_id' => $userId,
+            'time' => $time
+        ]);
+    }
+
 
 }

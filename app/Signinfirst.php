@@ -7,14 +7,27 @@
  */
 namespace App;
 
+use Illuminate\Database\Eloquent\Model;
 
-use Illuminate\Support\Facades\DB;
-
-class Signinfirst
+class Signinfirst extends Model
 {
+    protected $table='signin_firsr';
 
     public function tryGetFirstSignin($userId)
     {
-        $firstTime = DB::where('user_id', '=', $userId)->value('first_time');
+        return $this::where('user_id', $userId)->value('first_time');
+    }
+
+    public function initSignFirst($userId, $firstTime)
+    {
+        return $this::insert([
+            'user_id' => $userId,
+            'first_time' => $firstTime
+        ]);
+    }
+
+    public function updateSignFirst($userId, $firstTime)
+    {
+        $this::update('update signin_first set first_time= ? where user_id = ?',[$firstTime,$userId]);
     }
 }

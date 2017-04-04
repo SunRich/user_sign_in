@@ -17,7 +17,7 @@ class CreateSigninfoTable extends Migration
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->integer('user_id')->comment('the user id');
-            $table->timestampTz('first_time')->comment('user sign time');
+            $table->timestampTz('time')->comment('user sign time');
             $table->index('user_id');
         });
     }
