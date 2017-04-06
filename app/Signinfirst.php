@@ -11,7 +11,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Signinfirst extends Model
 {
-    protected $table='signin_firsr';
+    protected $table='signin_first';
+
+    public $timestamps = false;
 
     public function tryGetFirstSignin($userId)
     {
@@ -28,6 +30,7 @@ class Signinfirst extends Model
 
     public function updateSignFirst($userId, $firstTime)
     {
-        $this::update('update signin_first set first_time= ? where user_id = ?',[$firstTime,$userId]);
+        $this::where('user_id',$userId)->update(['first_time'=>$firstTime]);
+        //$this::update('update signin_first set first_time= ? where user_id = ?',[$firstTime,$userId]);
     }
 }
