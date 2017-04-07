@@ -20,4 +20,4 @@ RUN cp -r /tmp/composer-install/vendor /var/www/webapp
 
 WORKDIR /var/www/webapp
 
-CMD bash /var/www/webapp/start-up.sh
+CMD bash /var/www/webapp/setenv.sh
