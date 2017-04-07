@@ -9,8 +9,8 @@ export DB_PORT=3306
 export DB_DATABASE=signin
 export DB_USERNAME=root
 export DB_PASSWORD=$MYSQL_ENV_MYSQL_ROOT_PASSWORD
-export CACHE_DRIVER=memcached
-export QUEUE_DRIVER=sync
+export CACHE_DRIVER=array
+export QUEUE_DRIVER=array
 export APP_TIMEZONE=PRC
 export DB_TIMEZONE=+08:00
 echo 'change to workdir'
