@@ -28,7 +28,7 @@ class SignController extends RestController
             ->whereBetween('time', [$startTime, $endTime])
             ->pluck('time');
         if ($times->isEmpty()) {
-            $return['message'] = 'empty signin';
+            $return['message'] = 'empty signindara';
         } else {
             $return = [
                 'code' => 200,
