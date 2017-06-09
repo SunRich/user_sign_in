@@ -1,5 +1,5 @@
 {
-    "name": "laravel/lumen",
+    "name": "SunRich/user_sign_in",
     "description": "The Laravel Lumen Framework.",
     "keywords": ["framework", "laravel", "lumen"],
     "license": "MIT",
